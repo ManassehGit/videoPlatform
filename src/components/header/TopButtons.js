@@ -2,7 +2,7 @@ import React from 'react'
 
 const TopButtons = () => {
   return (
-    <div>
+    <div className='topButtons'>
         <button>Login</button>
         <button>Sign Up</button>
     </div>
