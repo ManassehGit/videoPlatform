@@ -26,3 +26,29 @@ code {
 .App{
   height: 100%;
 }
+
+.body{
+  height: 75vh;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url('../public/background.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body button{
+  height: 65px;
+  font-size: large;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.topButtons{
+  display: flex;
+  align-items: center;
+}
+
+.header button+button{
+  margin-left: 15px;
+}
