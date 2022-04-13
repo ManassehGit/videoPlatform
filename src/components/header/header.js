@@ -1,12 +1,13 @@
 import React from 'react';
+import TopButtons from './TopButtons';
 
-const header = () => {
+const Header = () => {
   return (
-    <div>
-        <img src='VideoPlatformProject.svg' alt='Video Platform Logo' />
+    <div className='header'>
+        <img src='VideoPlatform.png' alt='Video Platform Logo' />
         <TopButtons />
     </div>
   )
 }
 
-export default header
+export default Header
