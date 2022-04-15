@@ -1,0 +1,53 @@
+.button{
+width: auto;
+margin: 10px;
+padding: 10px;
+height: auto;
+background-color: white;
+cursor: pointer;
+border-radius: 50px;
+border-width: 2px;
+border-style: outset;
+border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+
+.button:hover{
+    background-color: rgb(235, 234, 234);
+}
+
+.para{
+color: #515151;    
+padding: 0%;
+margin: 0%;
+}
+
+.para_c{
+    color: #f7941d;    
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0%;
+    }
+    
+
+.button_c{
+    border-width: 1px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    width: auto;
+    margin: 10px;
+    padding: 20px;
+    height: auto;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    }
+
+    .button_c:hover{
+        background-color: rgb(235, 234, 234);
+    }
+    
+

@@ -1,10 +1,17 @@
 import React from 'react'
+import Button from '../Buttons/Button'
 
 const TopButtons = () => {
   return (
     <div className='topButtons'>
-        <button>Login</button>
-        <button>Sign Up</button>
+        <Button 
+        name="Login"
+        size="15px"
+        />
+        <Button 
+        name="Sign Up" 
+        size="15px"
+        />
     </div>
   )
 }
