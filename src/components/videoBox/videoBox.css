@@ -1,0 +1,65 @@
+.title{
+    text-align: right;
+}
+
+.rectangle{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+    width: 100%;
+    margin: 2%;
+}
+
+.rec1{
+    margin: 0.5rem;
+    width: 55%;
+    height: 700;    
+}
+
+.vid{
+background-color: black;
+margin-left: 2%;    
+position: relative;
+width: 97.5%;
+height: 80%;
+border-width: "1px";
+border: solid;
+border-color: black
+}
+
+.rec1_down{
+    margin-left: 2%;    
+    position: relative;
+    width: 97.5%;
+    height: 7.4%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+     
+
+}
+
+.rec2{
+    padding-top: 60px;
+    margin: 0.5rem;
+    width: 25%;
+    height: 600px; 
+}
+
+.desc{
+    text-align: left;
+    font-size: larger;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    
+}
+
+.but{
+    margin-top: 17%;
+}
+
+.paragraph{
+border-width: "1px";
+border: solid;
+border-color: black
+}
