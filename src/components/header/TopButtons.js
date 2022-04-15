@@ -13,13 +13,6 @@ const TopButtons = ({button1,button2,color}) => {
         size="15px"
         color={color}
         />
-<<<<<<< HEAD
-=======
-        <Button 
-        name="Sign Up" 
-        size="15px"
-        />
->>>>>>> 851ae093736142c0becc626edcab17c47d813d04
     </div>
   )
 }
