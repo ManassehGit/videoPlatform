@@ -13,4 +13,4 @@ const Header = ({button1,button2}) => {
   )
 }
 
-export default Header
+export default Header;
