@@ -8,8 +8,10 @@ const TopButtons = () => {
         name="Login"
         size="15px"
         />
-        <Button name="Sign Up" 
-        size="15px"/>
+        <Button 
+        name="Sign Up" 
+        size="15px"
+        />
     </div>
   )
 }
