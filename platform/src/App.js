@@ -19,3 +19,7 @@ export default App;
 
 // vziakwwy - public
 // 63878da4-6eb0-42a6-b8eb-f9b3833bcc81 -
+    // "build": "cd platform && npm install && npm run build",
+    // "server": "nodemon server.js",
+    // "platform": "npm start --prefix platform",
+    // "dev": "concurrently \"npm run server\" \"npm run platform\""
