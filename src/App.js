@@ -7,7 +7,7 @@ import Form from './components/Form/form';
 function App() {
   return (
     <div className="App">
-      <Header 
+      <Header  
       button1="Log In"
       button2= "Sign Up"/>
       <Body />
