@@ -1,21 +1,29 @@
+.form-input{
+   text-align: center;
+   margin-left: 35%;
+   margin-right: 35%;
+   border-radius: 15px;
+   background-color: rgb(243, 247, 247) ;
+}
 
 .label{
 display: block;
 font-size: larger;
-color: white;
+color: rgb(75, 72, 72);
 padding: 5px;
+border-radius: 15px 15px 0 0;
 }
 
 .input{
-font-size: larger;
+font-size: 16PX;
 padding: 5px;
 margin: 2px;
 
 }
 .btn{
-color: white;
-background-color: red;
-border-radius: 5px;
+color: rgb(70, 66, 66);
+background-color: rgb(243, 234, 234);
+border-radius: 15px;
 font-size: larger;
 display: block;
 padding: 5px;
@@ -30,7 +38,7 @@ justify-content: center;
 .error{
 display: block;
 background-color: red;
-color: white;
+color: rgb(85, 83, 83);
 width: fit-content;
 height: 50px;
 padding: 5px;

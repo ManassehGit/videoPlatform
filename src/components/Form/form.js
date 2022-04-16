@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import './form.css';
 
-export default function Form() {
+function Form() {
 
 // States for registration
 const [name, setName] = useState('');
-const [email, setEmail] = useState('');
+//const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
 // States for checking the errors
@@ -17,11 +18,11 @@ const handleName = (e) => {
 	setSubmitted(false);
 };
 
-// Handling the email change
+/**Handling the email change
 const handleEmail = (e) => {
 	setEmail(e.target.value);
 	setSubmitted(false);
-};
+};**/
 
 // Handling the password change
 const handlePassword = (e) => {
@@ -32,7 +33,7 @@ const handlePassword = (e) => {
 // Handling the form submission
 const handleSubmit = (e) => {
 	e.preventDefault();
-	if (name === '' || email === '' || password === '') {
+	if (name === '' || password === '') {
 	setError(true);
 	} else {
 	setSubmitted(true);
@@ -69,7 +70,7 @@ const errorMessage = () => {
 return (
 	<div className="form">
 	<div>
-		<h1>User Registration</h1>
+		<h1>VIDEO PLATFORM</h1>
 	</div>
 
 	{/* Calling to the methods */}
@@ -79,23 +80,29 @@ return (
 	</div>
 
 	<form>
+        
 		{/* Labels and inputs for form data */}
-		<label className="label">Name</label>
-		<input onChange={handleName} className="input"
-		value={name} type="text" />
+        <div className='form-input'>
+            <div>
+                LOGIN MENU
+            </div>
+            <label className="label">Username</label>
+            <input onChange={handleName} className="input"
+            value={name} type="text" />
 
-		<label className="label">Email</label>
-		<input onChange={handleEmail} className="input"
-		value={email} type="email" />
 
-		<label className="label">Password</label>
-		<input onChange={handlePassword} className="input"
-		value={password} type="password" />
+            <label className="label">Password</label>
+            <input onChange={handlePassword} className="input"
+            value={password} type="password" />
 
-		<button onClick={handleSubmit} className="btn" type="submit">
-		Submit
-		</button>
+            <button onClick={handleSubmit} className="btn" type="submit">
+            LOGIN
+            </button>
+            <div>
+            Not having an account? SIGN UP
+            </div>
+        </div>
 	</form>
 	</div>
 );
-}
+}export default Form;
