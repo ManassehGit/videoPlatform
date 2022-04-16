@@ -1,10 +1,14 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
-let port = 5000;
+let port = process.env.PORT || 3001;
+console.log(port);
+
+app.use(express.static(path.resolve(__dirname, './platform/build')));
 
 app.get('/upload', (req, res, next) => {
-    res.status(201).send("Welcome")
+    res.status(201).json({msg: "Welcome to the serve page"})
 })
 
 app.post('/upload', (req, res, next) => {
@@ -23,5 +27,5 @@ app.post('/upload', (req, res, next) => {
 })
 
 app.listen(port, () => {
-    console.log("listening on port 5000")
+    console.log(`listening on port ${port}`);
 })
