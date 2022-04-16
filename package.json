@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "build": "cd platform && npm install && npm run build",
     "server": "nodemon server.js",
     "platform": "npm start --prefix platform",
     "dev": "concurrently \"npm run server\" \"npm run platform\""
