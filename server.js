@@ -3,9 +3,12 @@ const path = require('path');
 
 const app = express();
 let port = process.env.PORT || 3001;
+<<<<<<< HEAD
 console.log(port);
 
 app.use(express.static(path.resolve(__dirname, './platform/build')));
+=======
+>>>>>>> origin/main
 
 app.get('/upload', (req, res, next) => {
     res.status(201).json({msg: "Welcome to the serve page"})
@@ -27,5 +30,9 @@ app.post('/upload', (req, res, next) => {
 })
 
 app.listen(port, () => {
+<<<<<<< HEAD
     console.log(`listening on port ${port}`);
+=======
+    console.log(`listening on port ${port}`)
+>>>>>>> origin/main
 })
