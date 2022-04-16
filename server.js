@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-let port = 5000;
+let port = process.env.PORT || 3001;
 
 app.get('/upload', (req, res, next) => {
     res.status(201).send("Welcome")
@@ -23,5 +23,5 @@ app.post('/upload', (req, res, next) => {
 })
 
 app.listen(port, () => {
-    console.log("listening on port 5000")
+    console.log(`listening on port ${port}`)
 })
