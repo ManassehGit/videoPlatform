@@ -1,0 +1,20 @@
+{
+  "name": "videoplatform",
+  "version": "1.0.0",
+  "description": "Video Platform Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManassehGit/videoPlatform.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManassehGit/videoPlatform/issues"
+  },
+  "homepage": "https://github.com/ManassehGit/videoPlatform#readme"
+}
