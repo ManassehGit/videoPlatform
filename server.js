@@ -7,7 +7,7 @@ let port = process.env.PORT || 3001;
 console.log(port);
 
 app.use(express.static(path.resolve(__dirname, './platform/build')));
-
+console.log(path.resolve(__dirname, './platform/build'));
 
 app.get('/upload', (req, res, next) => {
     res.status(201).json({msg: "Welcome to the serve page"})
@@ -29,9 +29,5 @@ app.post('/upload', (req, res, next) => {
 })
 
 app.listen(port, () => {
-<<<<<<< HEAD
-    console.log(`listening on port ${port}`);
-=======
     console.log(`listening on port ${port}`)
->>>>>>> origin/main
 })
