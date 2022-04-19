@@ -1,9 +1,12 @@
 .form-input{
+   padding: 20px;
    text-align: center;
    margin-left: 35%;
    margin-right: 35%;
    border-radius: 15px;
    background-color: rgb(243, 247, 247) ;
+   border-style: solid;
+   border-width: 1px;
 }
 
 .label{
@@ -15,19 +18,29 @@ border-radius: 15px 15px 0 0;
 }
 
 .input{
+margin-bottom: 30px;   
+border-radius: 50px;   
 font-size: 16PX;
 padding: 5px;
-margin: 2px;
 
 }
 .btn{
-color: rgb(70, 66, 66);
-background-color: rgb(243, 234, 234);
-border-radius: 15px;
-font-size: larger;
-display: block;
+width: fit-content;
 padding: 5px;
-margin: 10px auto;
+height: auto;
+background-color: white;
+cursor: pointer;
+border-radius: 50px;
+border-width: 2px;
+border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+color: rgb(70, 66, 66);
+font-size: large;
+display: block;
+margin: auto;
+}
+
+.btn:hover{
+   background-color: rgb(235, 234, 234);
 }
 
 .messages{
@@ -37,7 +50,7 @@ justify-content: center;
 
 .error{
 display: block;
-background-color: red;
+background-color: rgb(251, 165, 165);
 color: rgb(85, 83, 83);
 width: fit-content;
 height: 50px;
@@ -52,3 +65,4 @@ width: fit-content;
 height: 50px;
 padding: 5px;
 }
+

@@ -69,9 +69,6 @@ const errorMessage = () => {
 
 return (
 	<div className="form">
-	<div>
-		<h1>VIDEO PLATFORM</h1>
-	</div>
 
 	{/* Calling to the methods */}
 	<div className="messages">
@@ -84,25 +81,27 @@ return (
 		{/* Labels and inputs for form data */}
         <div className='form-input'>
             <div>
-                LOGIN MENU
+				<h2 style={{marginBottom:"30px"}}>SIGN UP MENU</h2>
             </div>
-            <label className="label">Username</label>
+            
             <input onChange={handleName} className="input"
-            value={name} type="text" />
+            value={name} type="text" placeholder='USERNAME'/>
 
-
-            <label className="label">Password</label>
+            
             <input onChange={handlePassword} className="input"
-            value={password} type="password" />
+            value={password} type="password" placeholder='PASSWORD'/>
 
-            <button onClick={handleSubmit} className="btn" type="submit">
-            LOGIN
-            </button>
-            <div>
-            Not having an account? SIGN UP
+            <button onClick={handleSubmit} className="btn" type="submit"
+			
+			>SIGN UP</button>
+            
+            
+            <div style={{marginTop:"10px"}}>
+            Already have an account? <a style={{color:"#f7941d"}} href="">LOGIN</a>
             </div>
         </div>
 	</form>
 	</div>
 );
 }export default Form;
+
