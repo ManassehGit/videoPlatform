@@ -1,13 +1,16 @@
 import {useState} from 'react'
+import './Home.css'
 import Body from '../components/body/body'
 import Header from '../components/header/header'
 import VideoBox from '../components/videoBox/videoBox'
 import VideoCard from '../components/videoCard/videoCard'
 import Footer from '../components/footer/footer'
+import Button from '../components/Buttons/Button'
+
 
 const Home = () => {
 
-const [route, setRoute] = useState(0);
+const [route, setRoute] = useState(false);
 
 
 const dummy_data = [{
@@ -25,31 +28,47 @@ const dummy_data = [{
 },{
     title: "Home Alone",
     desc:"GTV's way of telling us its Christmas"
+},{
+  title: "Yawa Of The Day",
+  desc:"Kwadwo Sheldon at it again"
 }]
 
-const ya = () =>{
-route = route+1;
-
+const changeToGallery = () =>{
+  console.log("hi")
+setRoute(true);
 }
 
   return (
-    <div className="App">
-    {(() => {
-      switch (route) {
-        case 0:
-          return <Header onClick={ya} />
-        case 1:
-          return <Footer onClick={ya} />
-        case 2:
-          return <Body onClick={ya} />
-        case 3:
-          return <VideoBox onClick={ya} />
-        default:
-          return null
-      }
-    })()}
+    <>
 
+    <Header
+    button1="LOGIN"
+    button2="SIGN UP"
+    />
+    {route ? (
+    <div className="cards">
+          {dummy_data.map((data) => (
+            <div>
+              <VideoCard
+                title={data.title}
+                description={data.desc}
+              />
+            </div>
+          ))}
+        </div>
+    ):(
+      <div className='body'>
+    
+      <div onClick={() => changeToGallery(true)} >
+        <Button
+      name = "View Gallery" 
+       size = "20px"
+  />
   </div>
+  </div>        
+    )}
+     <Footer />   
+    </>    
   )
 }
 

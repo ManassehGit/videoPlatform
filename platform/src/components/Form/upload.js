@@ -4,17 +4,21 @@ import './form.css';
 function Form() {
 
 // States for registration
-const [name, setName] = useState('');
-//const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+const [title, setTitle] = useState('');
+
+const [option, setOption] = useState('');
+
+const [details, setDetails] = useState('');
+
+
 
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
 
-// Handling the name change
+/* Handling the name change
 const handleName = (e) => {
-	setName(e.target.value);
+	setTitle(e.target.value);
 	setSubmitted(false);
 };
 
@@ -22,7 +26,7 @@ const handleName = (e) => {
 const handleEmail = (e) => {
 	setEmail(e.target.value);
 	setSubmitted(false);
-};**/
+};
 
 // Handling the password change
 const handlePassword = (e) => {
@@ -66,39 +70,38 @@ const errorMessage = () => {
 	</div>
 	);
 };
+*/
 
 return (
 	<div className="form">
 
-	{/* Calling to the methods */}
+	{/* Calling to the methods 
 	<div className="messages">
 		{errorMessage()}
 		{successMessage()}
-	</div>
-
+	</div>		
+	*/}
+	
 	<form>
         
 		{/* Labels and inputs for form data */}
-        <div className='form-input'>
+        <div className='form-input2'>
             <div>
-				<h2 style={{marginBottom:"30px"}}>SIGN UP MENU</h2>
+				<h2 className='head'>UPLOAD A VIDEO</h2>
             </div>
-            
-            <input onChange={handleName} className="input"
-            value={name} type="text" placeholder='USERNAME'/>
 
+			<input className="input2"
+            value={option} type="text" placeholder='UPLOAD OPTION'/>
             
-            <input onChange={handlePassword} className="input"
-            value={password} type="password" placeholder='PASSWORD'/>
+            <input  className="input_"
+            value={title} type="text" placeholder='TITLE'/>
 
-            <button onClick={handleSubmit} className="btn" type="submit"
-			
-			>SIGN UP</button>
-            
-            
-            <div style={{marginTop:"10px"}}>
-            Already have an account? <a style={{color:"#f7941d"}} href="">LOGIN</a>
-            </div>
+			<input className="input3"
+            value={details} type="text" placeholder='VIDEO DETAILS'/>
+
+
+            <button className="btn_" type="submit">UPLOAD</button>
+        
         </div>
 	</form>
 	</div>

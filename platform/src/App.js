@@ -6,13 +6,12 @@ import Login from './components/Form/Login';
 import HeaderC from './components/header/headerCentre';
 import Signin from './components/Form/Signin'
 import Upload from './components/Form/upload'
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-      <HeaderC />
-      <Upload />
-      <Footer />
+      <Home />
     </div>
   );
 }
