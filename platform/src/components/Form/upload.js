@@ -16,9 +16,19 @@ const [details, setDetails] = useState('');
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
 
-/* Handling the name change
-const handleName = (e) => {
+// Handling the changes
+const handleTitle = (e) => {
 	setTitle(e.target.value);
+	setSubmitted(false);
+};
+
+const handleOption = (e) => {
+	setOption(e.target.value);
+	setSubmitted(false);
+};
+
+const handleDetails = (e) => {
+	setDetails(e.target.value);
 	setSubmitted(false);
 };
 
@@ -33,11 +43,11 @@ const handlePassword = (e) => {
 	setPassword(e.target.value);
 	setSubmitted(false);
 };
-
+*/
 // Handling the form submission
 const handleSubmit = (e) => {
 	e.preventDefault();
-	if (name === '' || password === '') {
+	if (title === '' || details === '' || option === '') {
 	setError(true);
 	} else {
 	setSubmitted(true);
@@ -53,7 +63,7 @@ const successMessage = () => {
 		style={{
 		display: submitted ? '' : 'none',
 		}}>
-		<h1>User {name} successfully registered!!</h1>
+		<h1>Video Uploaded</h1>
 	</div>
 	);
 };
@@ -70,17 +80,17 @@ const errorMessage = () => {
 	</div>
 	);
 };
-*/
+
 
 return (
 	<div className="form">
 
-	{/* Calling to the methods 
+	{/* Calling to the methods*/} 
 	<div className="messages">
 		{errorMessage()}
 		{successMessage()}
 	</div>		
-	*/}
+	
 	
 	<form>
         
@@ -90,17 +100,17 @@ return (
 				<h2 className='head'>UPLOAD A VIDEO</h2>
             </div>
 
-			<input className="input2"
+			<input className="input2" onChange={handleOption}
             value={option} type="text" placeholder='UPLOAD OPTION'/>
             
-            <input  className="input_"
+            <input  className="input_" onChange={handleTitle}
             value={title} type="text" placeholder='TITLE'/>
 
-			<input className="input3"
+			<input className="input3" onChange={handleDetails}
             value={details} type="text" placeholder='VIDEO DETAILS'/>
 
 
-            <button className="btn_" type="submit">UPLOAD</button>
+            <button onClick={handleSubmit} className="btn_" type="submit">UPLOAD</button>
         
         </div>
 	</form>
