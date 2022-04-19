@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './form.css';
 
-function Form() {
+function Form(props) {
 
 // States for registration
 const [name, setName] = useState('');

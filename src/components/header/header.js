@@ -5,7 +5,7 @@ const Header = ({button1,button2}) => {
 
   return (
     <div className='header'>
-      <img src='VideoPlatform.png' alt='Video Platform Logo' />
+      <img src='VideoPlatform.png' alt='Video Platform Logo'/>
      <TopButtons
       button1={button1}
       button2={button2}
