@@ -1,8 +1,9 @@
 import React from 'react'
 import Button from '../Buttons/Button'
 
+
 const TopButtons = ({button1,button2,color}) => {
- 
+
   return (
     <div className='topButtons'>
       <Button 
