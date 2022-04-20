@@ -4,6 +4,11 @@ import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Body from './components/body/body';
 import Form from './components/Form/form';
+// import Login from './components/Form/Login';
+// import HeaderC from './components/header/headerCentre';
+// import Signin from './components/Form/Signin'
+// import Upload from './components/Form/upload'
+// import Home from './pages/Home';
 
 
 function App() {
