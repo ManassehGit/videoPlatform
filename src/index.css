@@ -29,13 +29,14 @@ code {
 
 .body{
   height: 75vh;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url('../public/background.jpg');
+  background:  url('../public/background.jpg');
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+/* linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), */
 
 .body button{
   height: 65px;

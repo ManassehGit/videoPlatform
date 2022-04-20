@@ -81,7 +81,7 @@ return (
 		{/* Labels and inputs for form data */}
         <div className='form-input'>
             <div>
-				<h2 style={{marginBottom:"30px"}}>LOGIN MENU</h2>
+				<h2 style={{marginBottom:"30px"}}>SIGN UP MENU</h2>
             </div>
             
             <input onChange={handleName} className="input"
@@ -93,16 +93,15 @@ return (
 
             <button onClick={handleSubmit} className="btn" type="submit"
 			
-			>LOGIN</button>
+			>SIGN UP</button>
             
             
             <div style={{marginTop:"10px"}}>
-            Not having an account? <a style={{color:"#f7941d"}} href="">SIGN UP</a>
+            Already have an account? <a style={{color:"#f7941d"}} href="">LOGIN</a>
             </div>
         </div>
 	</form>
 	</div>
 );
-
 }export default Form;
 

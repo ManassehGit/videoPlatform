@@ -4,17 +4,31 @@ import './form.css';
 function Form() {
 
 // States for registration
-const [name, setName] = useState('');
-//const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+const [title, setTitle] = useState('');
+
+const [option, setOption] = useState('');
+
+const [details, setDetails] = useState('');
+
+
 
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
 
-// Handling the name change
-const handleName = (e) => {
-	setName(e.target.value);
+// Handling the changes
+const handleTitle = (e) => {
+	setTitle(e.target.value);
+	setSubmitted(false);
+};
+
+const handleOption = (e) => {
+	setOption(e.target.value);
+	setSubmitted(false);
+};
+
+const handleDetails = (e) => {
+	setDetails(e.target.value);
 	setSubmitted(false);
 };
 
@@ -22,18 +36,18 @@ const handleName = (e) => {
 const handleEmail = (e) => {
 	setEmail(e.target.value);
 	setSubmitted(false);
-};**/
+};
 
 // Handling the password change
 const handlePassword = (e) => {
 	setPassword(e.target.value);
 	setSubmitted(false);
 };
-
+*/
 // Handling the form submission
 const handleSubmit = (e) => {
 	e.preventDefault();
-	if (name === '' || password === '') {
+	if (title === '' || details === '' || option === '') {
 	setError(true);
 	} else {
 	setSubmitted(true);
@@ -49,7 +63,7 @@ const successMessage = () => {
 		style={{
 		display: submitted ? '' : 'none',
 		}}>
-		<h1>User {name} successfully registered!!</h1>
+		<h1>Video Uploaded</h1>
 	</div>
 	);
 };
@@ -67,42 +81,40 @@ const errorMessage = () => {
 	);
 };
 
+
 return (
 	<div className="form">
 
-	{/* Calling to the methods */}
+	{/* Calling to the methods*/} 
 	<div className="messages">
 		{errorMessage()}
 		{successMessage()}
-	</div>
-
+	</div>		
+	
+	
 	<form>
         
 		{/* Labels and inputs for form data */}
-        <div className='form-input'>
+        <div className='form-input2'>
             <div>
-				<h2 style={{marginBottom:"30px"}}>LOGIN MENU</h2>
+				<h2 className='head'>UPLOAD A VIDEO</h2>
             </div>
-            
-            <input onChange={handleName} className="input"
-            value={name} type="text" placeholder='USERNAME'/>
 
+			<input className="input2" onChange={handleOption}
+            value={option} type="text" placeholder='UPLOAD OPTION'/>
             
-            <input onChange={handlePassword} className="input"
-            value={password} type="password" placeholder='PASSWORD'/>
+            <input  className="input_" onChange={handleTitle}
+            value={title} type="text" placeholder='TITLE'/>
 
-            <button onClick={handleSubmit} className="btn" type="submit"
-			
-			>LOGIN</button>
-            
-            
-            <div style={{marginTop:"10px"}}>
-            Not having an account? <a style={{color:"#f7941d"}} href="">SIGN UP</a>
-            </div>
+			<input className="input3" onChange={handleDetails}
+            value={details} type="text" placeholder='VIDEO DETAILS'/>
+
+
+            <button onClick={handleSubmit} className="btn_" type="submit">UPLOAD</button>
+        
         </div>
 	</form>
 	</div>
 );
-
 }export default Form;
 
