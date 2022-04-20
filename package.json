@@ -1,31 +1,44 @@
 {
   "name": "videoplatform",
-  "version": "1.0.0",
-  "description": "Video Platform Project",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "cd platform && npm install && npm run build",
-    "server": "nodemon server.js",
-    "platform": "npm start --prefix platform",
-    "dev": "concurrently \"npm run server\" \"npm run platform\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ManassehGit/videoPlatform.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ManassehGit/videoPlatform/issues"
-  },
-  "homepage": "https://github.com/ManassehGit/videoPlatform#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "express-fileupload": "^1.3.1"
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.0.1",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
+    "lorem-ipsum": "^2.0.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-lorem-ipsum": "^1.4.10",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
-  "devDependencies": {
-    "concurrently": "^7.1.0",
-    "nodemon": "^2.0.15"
-  }
+  "scripts": {
+    "start-client": "react-scripts start",
+    "start": "npm run build && (cd server && npm start)",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost/3001"
 }
