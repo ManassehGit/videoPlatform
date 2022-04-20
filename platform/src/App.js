@@ -1,19 +1,32 @@
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Body from './components/body/body';
 import Form from './components/Form/form';
 
+
 function App() {
   return (
-    <div className="App">
-      <Header 
-      button1="Log In"
-      button2= "Sign Up"/>
-      <Body />
-      <Form />
-      <Footer />
-    </div>
+    <Router>
+
+      <div className="App">
+        <Header
+          button1="Log In"
+          button2="Sign Up" />
+
+        <Switch>
+          <Route exact path='/'>
+            <Body />
+          </Route>
+          <Route path='/form'>
+            <Form />
+          </Route>
+        </Switch>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

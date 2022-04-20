@@ -6,8 +6,8 @@ let port = process.env.PORT || 3001;
 
 console.log(port);
 
-app.use(express.static(path.resolve(__dirname, './platform/build')));
-console.log(path.resolve(__dirname, './platform/build'));
+app.use(express.static(path.resolve(__dirname, 'build')));
+console.log(path.resolve(__dirname, 'build'));
 
 app.get('/upload', (req, res, next) => {
     res.status(201).json({msg: "Welcome to the serve page"})
