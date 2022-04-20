@@ -1,5 +1,7 @@
 import React from 'react';
 import TopButtons from './TopButtons';
+import { Link } from 'react-router-dom';
+import { linkTo } from '../LinkTo/linkTo';
 
 const Header = ({button1,button2}) => {
 
