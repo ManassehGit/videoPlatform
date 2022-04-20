@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Body from './components/body/body';
@@ -11,20 +11,23 @@ function App() {
     <Router>
 
       <div className="App">
-        <Header
-          button1="Log In"
-          button2="Sign Up" />
-
-        <Switch>
+        <Route path='/'>
+          <Header
+            button1="Log In"
+            button2="Sign Up" />
+        </Route>
+        <Routes>
           <Route exact path='/'>
             <Body />
           </Route>
           <Route path='/form'>
             <Form />
           </Route>
-        </Switch>
+        </Routes>
+        <Route>
+          <Footer />
+        </Route>
 
-        <Footer />
       </div>
     </Router>
   );
