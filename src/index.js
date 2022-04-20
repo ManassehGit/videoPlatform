@@ -4,15 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
-import Body from './components/body/body';
 import Form from './components/Form/form';
 import Login from './components/Form/Login';
 import Signin from './components/Form/Signin';
 import Upload from './components/Form/upload';
 
 import VideoBox from './components/videoBox/videoBox';
+import VideoCard from './components/videoCard/videoCard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +20,9 @@ root.render(
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signin />} />
       <Route path='/upload' element={<Upload />} />
+      <Route path='/gallery/:video' element={<VideoCard />} />
+      <Route path='/gallery' element={<VideoBox />} />
+      
     </Routes>
   </Router>
 );
