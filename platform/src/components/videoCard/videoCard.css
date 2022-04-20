@@ -10,7 +10,7 @@
 
 .description{
     color: #515151;
-    font-size: large;
+    font-size: medium;
 }
 
 .container:hover{
@@ -21,16 +21,17 @@
 }
 
 .container{
+    padding-top: 20px;
+    position: relative;
     margin: 50px;
-    position: absolute;
     align-items: center;
     align-content: center;
     border-radius: 30px;
     background: #fff;
     box-shadow: 4px 3px 8px 1px #515151;
   	-webkit-box-shadow: 4px 3px 8px 1px #515151;
-    width: 450px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     cursor: pointer;
 }
 
@@ -40,5 +41,5 @@
     margin-right: auto;
     background-color: #515151;
     height: 1.5px;
-    width: 300px;
+    width: 150px;
 }
