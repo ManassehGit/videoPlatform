@@ -3,12 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Form from './components/Form/form';
+import Login from './components/Form/Login';
+import Signin from './components/Form/Signin';
+import Upload from './components/Form/upload';
+
+import VideoBox from './components/videoBox/videoBox';
+import VideoCard from './components/videoCard/videoCard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Router>
+    <Routes>
+      <Route path='/' element={<App />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signin />} />
+      <Route path='/upload' element={<Upload />} />
+      <Route path='/gallery/:video' element={<VideoCard />} />
+      <Route path='/gallery' element={<VideoBox />} />
+      
+    </Routes>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
