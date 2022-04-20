@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './form.css';
 
-function Form() {
+function Signin() {
 
 // States for registration
 const [name, setName] = useState('');
@@ -103,5 +103,5 @@ return (
 	</form>
 	</div>
 );
-}export default Form;
+}export default Signin;
 
