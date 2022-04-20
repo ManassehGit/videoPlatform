@@ -31,16 +31,16 @@ class Navigation extends Component {
                   <Collapse isOpen={this.state.isNavOpen} navbar>
                       <Nav navbar>
                       <NavItem>
-                          <NavLink className="nav-link"  to='/form'><span className="fa fa-home fa-lg"></span> Login</NavLink>
+                          <NavLink className="nav-link"  to='/form'><span className="fa fa-sign-in fa-lg"></span> Login</NavLink>
                       </NavItem>
                       <NavItem>
-                          <NavLink className="nav-link" to='/sign up'><span className="fa fa-info fa-lg"></span> Sign Up</NavLink>
+                          <NavLink className="nav-link" to='/sign up'><span className="fa fa-user-plus fa-lg"></span> Sign Up</NavLink>
                       </NavItem>
                       
                       </Nav>
                   </Collapse>
                   <NavbarBrand className="mr-auto" href="/"><img src='VideoPlatform.png' alt='Video Platform Logo' height="45" width="120"  /></NavbarBrand>
-
+                  class=""
               </div>
           </Navbar>
          
