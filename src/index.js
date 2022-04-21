@@ -18,12 +18,14 @@ root.render(
   <Router>
     <Routes>
       <Route path='/' element={<App />} />
-      <Route path='/login' element={<AuthForm loginState={true}/>} />
-      <Route path='/signup' element={<AuthForm signupState={true}/>} />
-      <Route path='/upload' element={<AuthForm uploadState={true}/>} />
+      <Route path='login' element={<AuthForm loginState={true}/>} />
+      <Route path='signup' element={<AuthForm signupState={true}/>} />
+      <Route path='upload' element={<AuthForm uploadState={true}/>} />
       
-      <Route path='/gallery' element={<Gallery />} />
-      <Route path='/gallery/:video' element={<VideoPage />} />
+      
+        <Route path='gallery/:id' element={<VideoPage />} />
+        <Route path='gallery' element={<Gallery />} />
+      
       
     </Routes>
   </Router>

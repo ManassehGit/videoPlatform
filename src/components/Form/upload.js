@@ -83,37 +83,36 @@ const errorMessage = () => {
 
 
 return (
-	<div className="form">
+	<div className="container">
 
 	{/* Calling to the methods*/} 
 	<div className="messages">
 		{errorMessage()}
 		{successMessage()}
 	</div>		
+
+
+		<form>
+		<div className="mb-3">
+			<label for="inputEmail" className="form-label">Email address</label>
+			<input type="email" onChange={handleOption} className="form-control" id="inputEmail" aria-describedby="emailHelp" />
+			<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+		</div>
+		<div className="mb-3">
+			<label for="inputPassword" className="form-label">Password</label>
+			<input type="password" onChange={handleTitle} className="form-control" id="inputPassword" />
+		</div>
+		<div className="mb-3">
+			<label for="inputPassword" className="form-label">Password</label>
+			<input type="password" onChange={handleDetails} className="form-control" id="inputPassword" />
+		</div>
+		<div className="mb-3 form-check">
+			<input type="checkbox" className="form-check-input" id="exampleCheck" />
+			<label className="form-check-label" for="exampleCheck">Check me out</label>
+		</div>
+		<button type="submit" onClick={handleSubmit} className="btn btn-primary">Upload</button>
+		</form>
 	
-	
-	<form>
-        
-		{/* Labels and inputs for form data */}
-        <div className='form-input2'>
-            <div>
-				<h2 className='head'>UPLOAD A VIDEO</h2>
-            </div>
-
-			<input className="input2" onChange={handleOption}
-            value={option} type="text" placeholder='UPLOAD OPTION'/>
-            
-            <input  className="input_" onChange={handleTitle}
-            value={title} type="text" placeholder='TITLE'/>
-
-			<input className="input3" onChange={handleDetails}
-            value={details} type="text" placeholder='VIDEO DETAILS'/>
-
-
-            <button onClick={handleSubmit} className="btn_" type="submit">UPLOAD</button>
-        
-        </div>
-	</form>
 	</div>
 );
 }export default Form;
