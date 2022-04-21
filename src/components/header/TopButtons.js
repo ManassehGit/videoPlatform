@@ -7,12 +7,20 @@ const TopButtons = ({button1, button2, color}) => {
   
   return (
     <div className='topButtons'>
+       
+       {/*
+        {(auth.isAuthenticated()) ? ( <a className="navbar-item is-danger" 
+       onClick={() => auth.logout()}>Log out </a> ) : 
+       ( <a className="navbar-item is-danger" onClick={() => auth.login()}>Log In</a> )} 
+       */}
+
         <Link to={linkTo(button1)}><Button 
         name={button1}
         size="15px"
         color={color}
         handleClick={linkTo(button1)}
         /></Link>
+
         <Link to={linkTo(button2)}>
         <Button name={button2} 
         size="15px"
