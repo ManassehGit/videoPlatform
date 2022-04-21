@@ -1,4 +1,4 @@
-export const linkTo = (name) => {
+export const linkTo = (name = 'index') => {
     switch(name){
       case 'Upload Video':
         return '/upload';
@@ -8,6 +8,8 @@ export const linkTo = (name) => {
         return '/signup';
     case 'View Gallery':
         return '/gallery'
+    case 'Index':
+        return '/';
       default:
         return '/'
     }

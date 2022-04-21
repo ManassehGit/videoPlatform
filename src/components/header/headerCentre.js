@@ -1,4 +1,6 @@
 import React from 'react'
+import { linkTo } from '../LinkTo/linkTo'
+import { Link } from 'react-router-dom'
 
 const headerCentre = () => {
   return (
@@ -9,7 +11,9 @@ const headerCentre = () => {
       display: 'flex',
       justifyContent: 'center'
       }}>
-      <img style={{width:'20%',height:'10%'}} src='VideoPlatform.png' alt='Video Platform Logo' />
+      <Link to={linkTo('Index')}>
+        <img style={{width:'auto',height:'6em'}} src='VideoPlatform.png' alt='Video Platform Logo' />
+        </Link>
     </div>
   )
 }
