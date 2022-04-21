@@ -1,6 +1,6 @@
 import './videoCard.css'
 
-const videoCard = ({title,description}) => {
+const VideoCard = ({title,description}) => {
   return (
    
     <div className="container">
@@ -17,4 +17,4 @@ const videoCard = ({title,description}) => {
     )
 }
 
-export default videoCard
+export default VideoCard;

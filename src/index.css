@@ -23,9 +23,9 @@ code {
   height: 70px;
 }
 
-.App{
+/* .App{
   height: 100%;
-}
+} */
 
 .body{
   height: 75vh;
@@ -52,4 +52,18 @@ code {
 
 .header button+button{
   margin-left: 15px;
+}
+
+.gridStyle {
+  display: grid;
+  width: 70%;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-gap: 5px;
+  justify-items: center;
+  margin: 50px auto;
+  justify-content: center;
+}
+
+.footer{
+  text-align: center;
 }

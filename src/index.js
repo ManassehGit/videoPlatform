@@ -4,24 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Form from './components/Form/form';
-import Login from './components/Form/Login';
-import Signin from './components/Form/Signin';
-import Upload from './components/Form/upload';
+// import Login from './components/Form/Login';
+// import Signin from './components/Form/Signin';
+// import Upload from './components/Form/upload';
+import AuthForm from './components/authForms/authform';
 
-import VideoBox from './components/videoBox/videoBox';
-import VideoCard from './components/videoCard/videoCard';
+import VideoPage from './components/videoPage/videoPage';
+import Gallery from './components/gallery/gallery';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
       <Route path='/' element={<App />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/signup' element={<Signin />} />
-      <Route path='/upload' element={<Upload />} />
-      <Route path='/gallery/:video' element={<VideoCard />} />
-      <Route path='/gallery' element={<VideoBox />} />
+      <Route path='/login' element={<AuthForm loginState={true}/>} />
+      <Route path='/signup' element={<AuthForm signupState={true}/>} />
+      <Route path='/upload' element={<AuthForm uploadState={true}/>} />
+      
+      <Route path='/gallery' element={<Gallery />} />
+      <Route path='/gallery/:video' element={<VideoPage />} />
       
     </Routes>
   </Router>

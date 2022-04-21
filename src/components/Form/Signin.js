@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './form.css';
 
 function Form() {
@@ -97,7 +98,7 @@ return (
             
             
             <div style={{marginTop:"10px"}}>
-            Already have an account? <a style={{color:"#f7941d"}} href="">LOGIN</a>
+            Already have an account? <Link style={{color:"#f7941d"}} to="/login">LOGIN</Link>
             </div>
         </div>
 	</form>

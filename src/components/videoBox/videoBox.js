@@ -3,7 +3,7 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 import Button from '../header/TopButtons';
 import Button2 from '../Buttons/Button_circular';
 
-const videoBox = () => {
+const VideoBox = () => {
   return (
     <div className='rectangle'>
       <div className='but'>
@@ -53,4 +53,4 @@ const videoBox = () => {
   )
 }
 
-export default videoBox
+export default VideoBox;
