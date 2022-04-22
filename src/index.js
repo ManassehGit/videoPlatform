@@ -21,8 +21,8 @@ root.render(
       <Route path='login' element={<AuthForm loginState={true}/>} />
       <Route path='signup' element={<AuthForm signupState={true}/>} />
       <Route path='upload' element={<AuthForm uploadState={true}/>} />
-        <Route path='gallery/:id' element={<VideoPage />} />
-        <Route path='gallery' element={<Gallery />} />
+      <Route path=':id' element={<VideoPage />} />
+      <Route path='gallery' element={<Gallery />} />
       
       
     </Routes>

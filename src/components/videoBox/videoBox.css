@@ -60,6 +60,8 @@ border-color: black
 
 .paragraph{
 border-width: "1px";
-border: solid;
-border-color: black
+border: dotted;
+border-color: gray;
+padding: 2em;
+border-top-right-radius: 40px;
 }

@@ -7,14 +7,14 @@ import Reactplayer from 'react-player';
 const VideoBox = () => {
   const url = "sample.mp4";
   return (
-    <div className='rectangle'>
-      <div className='but'>
+    <div className='rectangle d-flex'>
+      <div className='but order-1 order-sm-1'>
       <Button2
         name = "Prev"
         /> 
       </div>
 
-        <div className='rec1'>
+        <div className='rec1 order-2 order-md-2'>
               <h2 className='title'>The Video Title</h2>
               <div className=''>
               <video controls width="100%">
@@ -30,13 +30,13 @@ const VideoBox = () => {
               </div>
         </div>
 
-        <div className='rec2'>
+        <div className='rec2 order-3 order-md-3'>
               <h4 className='desc'>Video Description</h4>
               <div className='paragraph'>
                <LoremIpsum p={2} />
               </div>
         </div>
-        <div className='but'>
+        <div className='but order-2 order-md-4'>
         <Button2
         name = "Next"
         />
