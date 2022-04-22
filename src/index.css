@@ -89,3 +89,14 @@ code {
   text-align: center;
   margin-top: 3em;
 }
+
+.showName{
+  display: flex;
+  flex-direction: row;
+}
+
+.showName p{
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+}

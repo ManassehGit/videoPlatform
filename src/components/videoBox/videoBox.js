@@ -5,7 +5,7 @@ import Button2 from '../Buttons/Button_circular';
 import Reactplayer from 'react-player';
 
 const VideoBox = () => {
-  const url = "../../../server/uploads/sample.mp4"
+  const url = "sample.mp4";
   return (
     <div className='rectangle'>
       <div className='but'>
@@ -16,8 +16,11 @@ const VideoBox = () => {
 
         <div className='rec1'>
               <h2 className='title'>The Video Title</h2>
-              <div className='vid'>
-                <Reactplayer url={url}/>
+              <div className=''>
+              <video controls width="100%">
+              <source src={url} type="video/mp4" />
+              Sorry, your browser doesn't support embedded videos.
+              </video>
               </div>
               <div className='rec1_down'>
                 <h4 style={{marginLeft:"10px"}}>
@@ -43,4 +46,4 @@ const VideoBox = () => {
   )
 }
 
-export default VideoBox;
+export default VideoBox

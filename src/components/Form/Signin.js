@@ -84,12 +84,20 @@ const successMessage = () => {
 // Showing error message if error is true
 const errorMessage = () => {
 	return (
-	<div
-		className="error"
-		style={{
-		display: error ? '' : 'none',
-		}}>
-		<h1>Please enter all the fields</h1>
+		<div class="row d-flex justify-content-center">
+		<div className='d-flex justify-content-center col-md-6'>
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	<h4 class="alert-heading">{registerEmail} could not be added</h4>
+	<p>
+		Kindly retry the sign up 
+	</p>
+	<hr />
+	<p class="mb-0">After you can sign in</p>
+	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+	  </div>
+
+	</div>
 	</div>
 	);
 };

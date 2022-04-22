@@ -6,7 +6,7 @@ import Footer from '../footer/footer';
 const VideoPage = () => {
   return (
     <div>
-        <Header button1="Upload Video" button2="Sign Out"/>
+        <Header button1="Upload Video" button2="Sign Out" user={{email: 'Kfi', name: 'Kofi'}} loggedIn={true}/>
         <VideoBox />
         <Footer />
     </div>
