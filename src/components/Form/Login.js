@@ -13,6 +13,7 @@ function Form() {
 	const [loginPassword, setLoginPassword] = useState();	
 	const [user, setUser] = useState();
 	const [errorMsg, setErrorMsg] = useState("");
+	const navigate = useNavigate();
 
 
 	useEffect(() => {
@@ -35,7 +36,7 @@ function Form() {
 		console.log(user);
 
 		setTimeout(() => {
-			navigate(linkTo('View Gallery'))
+			navigate(linkTo('View Gallery'));
 		}, 5000)
 
 		}catch(e){
@@ -45,6 +46,7 @@ function Form() {
 		}
 
 	}
+
 
 	
 
@@ -73,7 +75,6 @@ const handlePassword = (e) => {
 	setSubmitted(false);
 };
 
-const navigate = useNavigate();
 
 // Handling the form submission
 
@@ -84,7 +85,7 @@ const successMessage = () => {
 		<div className="row d-flex justify-content-center">
 		<div className='d-flex justify-content-center col-md-6'>
 		<div className="alert alert-success alert-dismissible fade show" role="alert">
-	<h4 class="alert-heading">{user} logged in successfully</h4>
+	<h4 className="alert-heading">{user} logged in successfully</h4>
 	<p>
 		You would now be redirected to view the gallery
 	</p>
@@ -126,21 +127,24 @@ return (
 			<div className="container col-md-6 justify-content-center p-5">
 			<h3 style={{color: 'gray', textAlign: 'center', marginBottom: '2em'}}>Login Form</h3>
 			<form>
-  <div class="mb-3">
-    <label for="inputEmail" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="inputEmail" onChange={handleEmail} aria-describedby="emailHelp" />
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <div className="mb-3">
+    <label htmlFor="inputEmail" className="form-label">Email address</label>
+    <input type="email" className="form-control" id="inputEmail" onChange={handleEmail} aria-describedby="emailHelp" />
+    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
   </div>
-  <div class="mb-3">
-    <label for="inputPassword" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword" onChange={handlePassword}/>
+  <div className="mb-3">
+    <label htmlFor="inputPassword" className="form-label">Password</label>
+    <input type="password" className="form-control" id="inputPassword" onChange={handlePassword}/>
   </div>
-  <div class="mb-3">
+  <div className="mb-3 d-flex justify-content-center">
+  	Forgotten your password? <Link style={{color:"#f7941d", marginLeft: "5px"}} to="/resetPassword"> Reset Password</Link>
+  </div>
+  <div className="mb-3">
   	Not having an account? <Link style={{color:"#f7941d"}} to="/signup">Sign Up</Link>
   </div>
   
   
-  <button type="submit" class="btn btn-outline-dark btn-lg" onClick={login}>Login</button>
+  <button type="submit" className="btn btn-outline-dark btn-lg" onClick={login}>Login</button>
 </form>
 			</div>
 			

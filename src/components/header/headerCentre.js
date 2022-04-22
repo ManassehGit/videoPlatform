@@ -1,8 +1,8 @@
 import React from 'react'
-import { linkTo } from '../LinkTo/linkTo'
 import { Link } from 'react-router-dom'
+import { linkTo } from '../LinkTo/linkTo'
 
-const headerCentre = () => {
+const HeaderCentre = () => {
   return (
     <div style={{
       margin:"auto",
@@ -18,4 +18,4 @@ const headerCentre = () => {
   )
 }
 
-export default headerCentre
+export default HeaderCentre
