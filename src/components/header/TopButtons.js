@@ -2,8 +2,20 @@ import React from 'react'
 import Button from '../Buttons/Button'
 import { Link } from 'react-router-dom'
 import { linkTo } from '../LinkTo/linkTo'
+import { useNavigate } from 'react-router-dom'
+import {signOut} from 'firebase/auth'
+import { auth } from '../../firebase-config'
 
 const TopButtons = ({button1, button2, color}) => {
+  const navigate = useNavigate();
+
+  
+    const logout = async (e) => {
+      await signOut(auth);
+      setTimeout(() => {
+        navigate(linkTo('Index'))
+      }, 5000)
+    }
   
   return (
     <div className='topButtons'>
@@ -17,7 +29,7 @@ const TopButtons = ({button1, button2, color}) => {
         <Button name={button2} 
         size="15px"
         color={color}
-        handleClick={linkTo(button2)}
+        handleClick={button2 === "Sign Out"? logout : linkTo(button2)}
         />
         </Link>
     </div>

@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import VideoCard from '../videoCard/videoCard';
 
 const VideoGrid = () => {
-    const [gridChoice, setGridChoice] = useState(0);
+    // const [gridChoice, setGridChoice] = useState(0);
     const [gridElements, setGridElements] = useState([]);
-    const [columnStyle, setColumnStyle] = useState({});
+    // const [columnStyle, setColumnStyle] = useState({});
     const [videos, setVideos] = useState({});
     
     useEffect(() => {
-        setGridChoice(3);
+        // setGridChoice(3);
         setVideos({
         "image": { 
             "src": "Images/Sun.png",
@@ -59,14 +59,14 @@ const VideoGrid = () => {
         }
     }); 
 
-    setColumnStyle({gridTemplateColumns: `repeat(${gridChoice}, 1fr)`});
+    // setColumnStyle({gridTemplateColumns: `repeat(${gridChoice}, 1fr)`});
     setGridElements(Object.keys(videos).map((item, index) => <VideoCard key={index} title={videos[item].name} description={videos[item].data} />));
         
-    }, [gridChoice, videos])
+    }, [ videos])
 
 
   return (
-    <div className="gridStyle" style={columnStyle}>
+    <div className="gridStyle">
         {gridElements}
     </div>
   )

@@ -11,11 +11,13 @@ import Body from './components/body/body';
 // import Home from './pages/Home';
 
 
+
 function App() {
+
   return (
       
       <div className='App'>  
-        <Header button1="Log In" button2="Sign Up"/>
+        <Header button1="Log In" button2="Sign Up" />
         <Body />
         <Footer />
       </div>

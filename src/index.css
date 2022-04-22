@@ -19,6 +19,21 @@ code {
   margin: 20px 40px;
 }
 
+@media screen and (max-width: 767px) {
+  .header{
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+    justify-content: center;
+  }
+
+  .header img{
+    height: 70px;
+    margin: 1em auto;
+    display: flex;
+  }
+}
+
 .header img{
   height: 70px;
 }
@@ -28,7 +43,7 @@ code {
 } */
 
 .body{
-  height: 75vh;
+  height: 70vh;
   background:  url('../public/background.jpg');
   background-position: center;
   background-size: cover;
@@ -38,17 +53,6 @@ code {
 }
 /* linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), */
 
-.body button{
-  height: 65px;
-  font-size: large;
-  border-radius: 30px;
-  padding: 20px;
-}
-
-.topButtons{
-  display: flex;
-  align-items: center;
-}
 
 .header button+button{
   margin-left: 15px;
@@ -56,14 +60,43 @@ code {
 
 .gridStyle {
   display: grid;
-  width: 70%;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  grid-gap: 5px;
+  width: 80%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
   justify-items: center;
   margin: 50px auto;
   justify-content: center;
 }
 
+@media screen and (max-width: 767px) {
+  .gridStyle {
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5em;
+    justify-items: center;
+    margin: 0.5em auto;
+    justify-content: center;
+  }
+
+  .topButtons{
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+
 .footer{
   text-align: center;
+  margin-top: 3em;
+}
+
+.showName{
+  display: flex;
+  flex-direction: row;
+}
+
+.showName p{
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
 }
