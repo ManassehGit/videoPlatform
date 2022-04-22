@@ -9,30 +9,10 @@ import Body from './components/body/body';
 // import Signin from './components/Form/Signin'
 // import Upload from './components/Form/upload'
 // import Home from './pages/Home';
-import {useState} from 'react';
+
 
 
 function App() {
-
-  const [registerEmail, setRegisterEmail] = useState();
-  const [registerPassword, setRegisterPassword] = useState();
-  const [loginEmail, setLoginEmail] = useState();
-  const [loginPassword, setLoginPassword] = useState();
-  
-
-
-  const register = async () => {
-
-  }
-
-  const login = async () => {
-
-  }
-
-  const logout = async () => {
-
-  }
-
 
   return (
       

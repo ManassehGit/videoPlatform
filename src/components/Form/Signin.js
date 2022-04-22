@@ -1,22 +1,26 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './form.css';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {auth} from '../../firebase-config';
+
 
 function Form() {
 
 // States for registration
-const [name, setName] = useState('');
+const [registerEmail, setRegisterEmail] = useState('');
 //const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+const [registerPassword, setRegisterPassword] = useState('');
 
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
 
-// Handling the name change
-const handleName = (e) => {
-	setName(e.target.value);
+// Handling the registerEmail change
+const handleEmail = (e) => {
+	setRegisterEmail(e.target.value);
 	setSubmitted(false);
+	console.log(registerEmail);
 };
 
 /**Handling the email change
@@ -25,33 +29,55 @@ const handleEmail = (e) => {
 	setSubmitted(false);
 };**/
 
-// Handling the password change
+// Handling the registerPassword change
 const handlePassword = (e) => {
-	setPassword(e.target.value);
+	setRegisterPassword(e.target.value);
 	setSubmitted(false);
 };
 
+const navigate = useNavigate();
+
 // Handling the form submission
-const handleSubmit = (e) => {
+
+const register = async (e) => {
 	e.preventDefault();
-	if (name === '' || password === '') {
-	setError(true);
-	} else {
-	setSubmitted(true);
-	setError(false);
-	}
-};
+	
+    try{
+      const user = await createUserWithEmailAndPassword(
+		  auth,
+		  registerEmail,
+		  registerPassword
+	  );
+	  console.log(user);
+	  setSubmitted(true);
+	  setError(false);
+	  navigate('/signup');
+
+
+    }catch(e){
+      console.log(e.message)
+    }
+    
+  }
 
 // Showing success message
 const successMessage = () => {
 	return (
-	<div
-		className="success"
-		style={{
-		display: submitted ? '' : 'none',
-		}}>
-		<h1>User {name} successfully registered!!</h1>
-	</div>
+		<div class="row d-flex justify-content-center">
+			<div className='d-flex justify-content-center col-md-6'>
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+		<h4 class="alert-heading">{registerEmail} added successfully</h4>
+		<p>
+			You can now view videos and upload videos and share videos on the platform
+		</p>
+		<hr />
+		<p class="mb-0">Have a nice time on the platform</p>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+	  	</div>
+
+		</div>
+		</div>
 	);
 };
 
@@ -69,26 +95,30 @@ const errorMessage = () => {
 };
 
 return (
+
 	<div className="container-body">
+		{error && errorMessage()}
+		{submitted && successMessage()}
 		<div className="">
+		
 			<div className="container col-md-6 justify-content-center p-5">
 			<h3 style={{color: 'gray', textAlign: 'center', marginBottom: '2em'}}>Sign Up Form</h3>
 			<form>
-  <div class="mb-3">
-    <label for="inputEmail" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" />
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <div className="mb-3">
+    <label htmlFor="inputEmail" className="form-label">Email address</label>
+    <input type="email" className="form-control" id="inputEmail" onChange={handleEmail} aria-describedby="emailHelp" />
+    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
   </div>
-  <div class="mb-3">
-    <label for="inputPassword" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword" />
+  <div className="mb-3">
+    <label htmlFor="inputPassword" className="form-label">Password</label>
+    <input type="password" className="form-control" id="inputPassword" onChange={handlePassword}/>
   </div>
-  <div class="mb-3">
+  <div className="mb-3">
   Already have an account? <Link style={{color:"#f7941d"}} to="/login">Login</Link>
   </div>
   
   
-  <button type="submit" class="btn btn-outline-dark btn-lg">Sign Up</button>
+  <button type="submit" className="btn btn-outline-dark btn-lg" onClick={register}>Sign Up</button>
 </form>
 			</div>
 			
@@ -112,12 +142,12 @@ return (
 	// 			<h2 style={{marginBottom:"30px"}}>SIGN UP MENU</h2>
     //         </div>
             
-    //         <input onChange={handleName} className="input"
-    //         value={name} type="text" placeholder='USERNAME'/>
+    //         <input onChange={handleEmail} className="input"
+    //         value={registerEmail} type="text" placeholder='USERNAME'/>
 
             
     //         <input onChange={handlePassword} className="input"
-    //         value={password} type="password" placeholder='PASSWORD'/>
+    //         value={registerPassword} type="password" placeholder='PASSWORD'/>
 
     //         <button onClick={handleSubmit} className="btn" type="submit"
 			

@@ -4,6 +4,17 @@ import {Link} from 'react-router-dom';
 
 function Form() {
 
+	const [loginEmail, setLoginEmail] = useState();
+	const [loginPassword, setLoginPassword] = useState();	
+
+	const login = async () => {
+
+	}
+  
+	const logout = async () => {
+  
+	}
+
 // States for registration
 const [name, setName] = useState('');
 //const [email, setEmail] = useState('');
