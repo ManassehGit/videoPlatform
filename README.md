@@ -15,7 +15,7 @@ A simple video streaming website, built with React, React-Router, Node.js, Expre
     out there due to branding issues with regards to his business. He wants a bespoke
     platform where he can upload videos for his customers solely for his brand
 
-    # Setup
+# Setup
 ## Package Manager
 NPM is the package manager of choice. To use this repository, run `npm install` to install all required packages. 
 
@@ -28,7 +28,7 @@ React is used for building the front end.
 Express is the web server used in the back end, which uses Node.js.
 
 ## Routing
-React-Router v4's `HashRouter` is used for client-side routing. The server doesn't handle dynamic requests, and only implements the API request handling.  
+React-Router is used for client-side routing.  
 
 ## Database
 The project implements the Firebase BaaS with its bundled implementations for databases 
