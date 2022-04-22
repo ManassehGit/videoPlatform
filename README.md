@@ -9,6 +9,7 @@ A simple video streaming website, built with React, React-Router, Node.js, Expre
   * [Frameworks](#frameworks)
   * [Routing](#routing)
   * [Database](#database)
+  * [Deployment](#deployment)
 
     #Project Objective
     Paul Leonard is a video creator. He is not satisfied with various video hosting platforms
@@ -33,6 +34,14 @@ React-Router is used for client-side routing.
 ## Database
 The project implements the Firebase BaaS with its bundled implementations for databases 
 
+## Deployment
+The application was deployed (hosted) online by Netlify. 
+
 
 # Directory Structure
 All videos are uploaded to the `videos` folder in public. The database simply stores the paths to these videos 
+
+
+
+
+
