@@ -14,29 +14,34 @@
 }
 
 .container:hover{
-
     background-color: rgb(235, 234, 234);
-    
-
 }
 
 .container{
-    padding-top: 20px;
-    position: relative;
-    margin: 20px;
     align-items: center;
     align-content: center;
     border-radius: 30px;
-    background: #fff;
-    box-shadow: 4px 3px 8px 1px #515151;
-  	-webkit-box-shadow: 4px 3px 8px 1px #515151;
+    box-shadow: 2px 3px 5px 1px #515151;
+  	-webkit-box-shadow: 2px 3px 5px 1px #515151;
     min-width: 300px;
-    height: 300px;
+    min-height: 300px;
     cursor: pointer;
 }
 
+
 .container .videoTitle{
     text-align: center;
+}
+
+.container-body{
+    margin: 5em 0px;
+}
+
+@media screen and (max-width: 767px) {
+    .container-body{
+        margin: 5em 0.5em;
+        display: flex;
+    }
 }
 
 .line{

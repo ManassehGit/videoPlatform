@@ -12,7 +12,7 @@ const headerCentre = () => {
       justifyContent: 'center'
       }}>
       <Link to={linkTo('Index')}>
-        <img style={{width:'auto',height:'6em'}} src='VideoPlatform.png' alt='Video Platform Logo' />
+        <img style={{width:'auto',height:'70px'}} src='VideoPlatform.png' alt='Video Platform Logo' />
         </Link>
     </div>
   )

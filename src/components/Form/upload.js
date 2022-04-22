@@ -83,37 +83,43 @@ const errorMessage = () => {
 
 
 return (
-	<div className="container">
-
-	{/* Calling to the methods*/} 
-	<div className="messages">
-		{errorMessage()}
-		{successMessage()}
-	</div>		
-
-
-		<form>
-		<div className="mb-3">
-			<label for="inputEmail" className="form-label">Email address</label>
-			<input type="email" onChange={handleOption} className="form-control" id="inputEmail" aria-describedby="emailHelp" />
-			<div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-		</div>
-		<div className="mb-3">
-			<label for="inputPassword" className="form-label">Password</label>
-			<input type="password" onChange={handleTitle} className="form-control" id="inputPassword" />
-		</div>
-		<div className="mb-3">
-			<label for="inputPassword" className="form-label">Password</label>
-			<input type="password" onChange={handleDetails} className="form-control" id="inputPassword" />
-		</div>
-		<div className="mb-3 form-check">
-			<input type="checkbox" className="form-check-input" id="exampleCheck" />
-			<label className="form-check-label" for="exampleCheck">Check me out</label>
-		</div>
-		<button type="submit" onClick={handleSubmit} className="btn btn-primary">Upload</button>
-		</form>
-	
+	<div className="container-body">
+		<div className="">
+			<div className="container col-md-6 justify-content-center p-5">
+			<form>
+			<div class="mb-3">
+			<label for="formFile" class="form-label">Select Video File</label>
+			<input class="form-control" type="file" id="formFile" />
+			</div>
+	<div className="mb-3">
+		<label for="title" className="form-label">Video Title</label>
+		<input type="password" onChange={handleTitle} className="form-control" id="title" />
 	</div>
+	<div className="mb-3">
+		<label for="inputPassword" className="form-label">Password</label>
+		<input type="password" onChange={handleDetails} className="form-control" id="inputPassword" />
+	</div>
+	<div className="mb-3 form-check">
+		<input type="checkbox" className="form-check-input" id="exampleCheck" />
+		<label className="form-check-label" for="exampleCheck">Check me out</label>
+	</div>
+	<button type="submit" onClick={handleSubmit} className="btn btn-outline-dark btn-lg">Upload</button>
+	</form>
+			</div>
+			
+		</div>
+	</div>
+	
 );
 }export default Form;
+
+
+
+<div className="container">
+
+{/* Calling to the methods*/} 
+
+	
+
+</div>
 
