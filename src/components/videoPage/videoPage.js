@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import Header from '../header/header';
 import VideoBox from '../videoBox/videoBox';
 import Footer from '../footer/footer';

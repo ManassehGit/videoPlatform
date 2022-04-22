@@ -2,14 +2,18 @@ import { useEffect, useState } from 'react';
 import './form.css';
 import {Link, useNavigate} from 'react-router-dom';
 import {auth} from '../../firebase-config';
-import {onAuthStateChanged} from 'firebase/auth';
+import {onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
 import { linkTo } from '../LinkTo/linkTo';
+
+
 
 function Form() {
 
 	const [loginEmail, setLoginEmail] = useState();
 	const [loginPassword, setLoginPassword] = useState();	
 	const [user, setUser] = useState();
+	const [errorMsg, setErrorMsg] = useState("");
+
 
 	useEffect(() => {
 		onAuthStateChanged(auth, (currentUser) => {
@@ -23,6 +27,12 @@ function Form() {
 		try {
 		setSubmitted(true);
 		setError(false);
+		const user = await signInWithEmailAndPassword(
+			auth,
+			loginEmail,
+			loginPassword
+		);
+		console.log(user);
 
 		setTimeout(() => {
 			navigate(linkTo('View Gallery'))
@@ -30,15 +40,16 @@ function Form() {
 
 		}catch(e){
 		setError(true);
+		setErrorMsg(e.message);
 		console.log(e);
 		}
 
 	}
 
+	
+
 // States for registration
-const [name, setName] = useState('');
 //const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
 
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
@@ -65,15 +76,7 @@ const handlePassword = (e) => {
 const navigate = useNavigate();
 
 // Handling the form submission
-const handleSubmit = (e) => {
-	e.preventDefault();
-	if (name === '' || password === '') {
-	setError(true);
-	} else {
-	setSubmitted(true);
-	setError(false);
-	}
-};
+
 
 // Showing success message
 const successMessage = () => {
@@ -117,6 +120,8 @@ const errorMessage = (err) => {
 
 return (
 	<div className="container-body">
+		{error && errorMessage(errorMsg)}
+		{submitted && successMessage()}
 		<div className="">
 			<div className="container col-md-6 justify-content-center p-5">
 			<h3 style={{color: 'gray', textAlign: 'center', marginBottom: '2em'}}>Login Form</h3>

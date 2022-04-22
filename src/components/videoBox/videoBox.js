@@ -2,7 +2,6 @@ import './videoBox.css'
 import { LoremIpsum } from 'react-lorem-ipsum';
 // import Button from '../header/TopButtons';
 import Button2 from '../Buttons/Button_circular';
-import Reactplayer from 'react-player';
 
 const VideoBox = () => {
   const url = "sample.mp4";
@@ -14,7 +13,7 @@ const VideoBox = () => {
         /> 
       </div>
 
-        <div className='rec1 order-2 order-md-2'>
+        <div className='rec1 order-3 order-md-2'>
               <h2 className='title'>The Video Title</h2>
               <div className=''>
               <video controls width="100%">
@@ -30,7 +29,7 @@ const VideoBox = () => {
               </div>
         </div>
 
-        <div className='rec2 order-3 order-md-3'>
+        <div className='rec2 order-4 order-md-3'>
               <h4 className='desc'>Video Description</h4>
               <div className='paragraph'>
                <LoremIpsum p={2} />

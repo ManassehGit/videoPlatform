@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import VideoGrid from '../videoGrid/videoGrid';
 import Header from '../header/header';
 import Footer from '../footer/footer';
