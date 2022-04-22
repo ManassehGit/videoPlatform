@@ -1,6 +1,6 @@
 import './videoBox.css'
 import { LoremIpsum } from 'react-lorem-ipsum';
-import Button from '../header/TopButtons';
+// import Button from '../header/TopButtons';
 import Button2 from '../Buttons/Button_circular';
 import Reactplayer from 'react-player';
 

@@ -1,13 +1,37 @@
 import { useState } from 'react';
 import './form.css';
 import {Link} from 'react-router-dom';
+import {auth} from '../../firebase-config';
+import {onAuthStateChanged} from 'firebase/auth';
+import {useNavigate} from 'react-router-dom';
+import { linkTo } from '../LinkTo/linkTo';
 
 function Form() {
 
+	const navigate = useNavigate();
+
 	const [loginEmail, setLoginEmail] = useState();
 	const [loginPassword, setLoginPassword] = useState();	
+	const [user, setUser] = useState();
 
-	const login = async () => {
+	onAuthStateChanged(auth, (currentUser) => {
+		setUser(currentUser);
+	})
+
+	const login = async (e) => {
+		e.preventDefault();
+		try {
+		setSubmitted(true);
+		setError(false);
+
+		setTimeout(() => {
+			navigate(linkTo('View Gallery'))
+		}, 5000)
+
+		}catch(e){
+		setError(true);
+		console.log(e);
+		}
 
 	}
   
@@ -83,6 +107,7 @@ return (
 	<div className="container-body">
 		<div className="">
 			<div className="container col-md-6 justify-content-center p-5">
+			<h3 style={{color: 'gray', textAlign: 'center', marginBottom: '2em'}}>Login Form</h3>
 			<form>
   <div class="mb-3">
     <label for="inputEmail" class="form-label">Email address</label>
@@ -98,7 +123,7 @@ return (
   </div>
   
   
-  <button type="submit" class="btn btn-outline-dark btn-lg">Login</button>
+  <button type="submit" class="btn btn-outline-dark btn-lg" onClick={login}>Login</button>
 </form>
 			</div>
 			

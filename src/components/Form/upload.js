@@ -96,13 +96,10 @@ return (
 		<input type="password" onChange={handleTitle} className="form-control" id="title" />
 	</div>
 	<div className="mb-3">
-		<label for="inputPassword" className="form-label">Password</label>
-		<input type="password" onChange={handleDetails} className="form-control" id="inputPassword" />
+		<label for="desc" className="form-label">Description</label>
+		<input type="text" onChange={handleDetails} className="form-control" id="desc" />
 	</div>
-	<div className="mb-3 form-check">
-		<input type="checkbox" className="form-check-input" id="exampleCheck" />
-		<label className="form-check-label" for="exampleCheck">Check me out</label>
-	</div>
+	
 	<button type="submit" onClick={handleSubmit} className="btn btn-outline-dark btn-lg">Upload</button>
 	</form>
 			</div>

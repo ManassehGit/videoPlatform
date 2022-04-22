@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './form.css';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {auth} from '../../firebase-config';
+import { linkTo } from '../LinkTo/linkTo';
 
 
 function Form() {
@@ -15,6 +16,7 @@ const [registerPassword, setRegisterPassword] = useState('');
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
+const [errorMsg, setErrorMsg] = useState("");
 
 // Handling the registerEmail change
 const handleEmail = (e) => {
@@ -51,11 +53,15 @@ const register = async (e) => {
 	  console.log(user);
 	  setSubmitted(true);
 	  setError(false);
-	  navigate('/signup');
-
+	  setTimeout(() => {
+		navigate(linkTo('View Gallery'))
+	}, 5000)
 
     }catch(e){
-      console.log(e.message)
+      console.log(e.message);
+	  setError(true);
+	  setErrorMsg(e);
+	  navigate(linkTo('index'));
     }
     
   }
@@ -63,16 +69,16 @@ const register = async (e) => {
 // Showing success message
 const successMessage = () => {
 	return (
-		<div class="row d-flex justify-content-center">
+		<div className="row d-flex justify-content-center">
 			<div className='d-flex justify-content-center col-md-6'>
-			<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<div className="alert alert-success alert-dismissible fade show" role="alert">
 		<h4 class="alert-heading">{registerEmail} added successfully</h4>
 		<p>
 			You can now view videos and upload videos and share videos on the platform
 		</p>
 		<hr />
-		<p class="mb-0">Have a nice time on the platform</p>
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		<p className="mb-0">Have a nice time on the platform</p>
+		<button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 
 	  	</div>
 
@@ -82,18 +88,16 @@ const successMessage = () => {
 };
 
 // Showing error message if error is true
-const errorMessage = () => {
+const errorMessage = (err) => {
 	return (
-		<div class="row d-flex justify-content-center">
+		<div className="row d-flex justify-content-center">
 		<div className='d-flex justify-content-center col-md-6'>
-		<div class="alert alert-warning alert-dismissible fade show" role="alert">
-	<h4 class="alert-heading">{registerEmail} could not be added</h4>
-	<p>
-		Kindly retry the sign up 
-	</p>
+		<div className="alert alert-warning alert-dismissible fade show" role="alert">
+	<h4 className="alert-heading">{registerEmail} could not be added</h4>
+	<p>{err.message}</p>
 	<hr />
-	<p class="mb-0">After you can sign in</p>
-	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	<p className="mb-0">Kindly retry the sign up, after you can sign in</p>
+	<button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 
 	  </div>
 
@@ -105,7 +109,7 @@ const errorMessage = () => {
 return (
 
 	<div className="container-body">
-		{error && errorMessage()}
+		{error && errorMessage(errorMsg)}
 		{submitted && successMessage()}
 		<div className="">
 		
