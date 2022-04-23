@@ -9,11 +9,11 @@ console.log(port);
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 console.log(path.resolve(__dirname, "..",'build'));
 
-app.get('/uploads', (req, res, next) => {
+app.get('/api', (req, res, next) => {
     res.status(201).json({msg: "Welcome to the serve page"})
 })
 
-app.post('/uploads', (req, res, next) => {
+app.post('/api', (req, res, next) => {
     if(req.files === null){
         return res.status(400).json({msg: 'No file uploaded'});
     }

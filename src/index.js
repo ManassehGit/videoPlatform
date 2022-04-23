@@ -18,16 +18,15 @@ root.render(
   <Router>
     <Routes>
       {/* <Route path="/" element={<App />} /> */}
-      <Route index element={<App/>} />
-      <Route path='/index' element={<App/>} />
+      <Route index element={<App />} />
+      <Route path='/index' element={<App />} />
       <Route path="/login" element={<AuthForm loginState={true}/>} />
       <Route path="/signup" element={<AuthForm signupState={true}/>} />
       <Route path="/upload" element={<AuthForm uploadState={true}/>} />
-      <Route path=":videoId" element={<VideoPage />} />
+      <Route path="/:videoId" element={<VideoPage />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/resetPassword" element={<AuthForm resetPassword={true}/>} />
-    
-
+      
     </Routes>
   </Router>
 );

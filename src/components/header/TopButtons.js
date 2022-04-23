@@ -15,10 +15,11 @@ const TopButtons = ({button1, button2, color}) => {
       console.log(result);
       setTimeout(() => {
         navigate(linkTo('Index'))
-      }, 5000)
+      }, 10000)
     }
   
   return (
+
     <div className='topButtons'>
         <Link to={linkTo(button1)}><Button 
         name={button1}
@@ -33,6 +34,7 @@ const TopButtons = ({button1, button2, color}) => {
         handleClick={button2 === "Sign Out"? logout : linkTo(button2)}
         />
         </Link>
+
     </div>
   )
 }
