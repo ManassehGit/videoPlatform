@@ -18,7 +18,7 @@ function Form() {
 
 	useEffect(() => {
 		onAuthStateChanged(auth, (currentUser) => {
-			setUser(currentUser);
+			setUser(currentUser.email);
 		})
 	}, []);
 
