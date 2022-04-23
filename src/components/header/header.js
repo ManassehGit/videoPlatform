@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { linkTo } from '../LinkTo/linkTo';
 
 const Header = ({button1,button2, user, loggedIn}) => {
+  
   return (
     <div className='header'>
       <Link to={linkTo('Index')}>
@@ -16,7 +17,7 @@ const Header = ({button1,button2, user, loggedIn}) => {
         button2={button2}
         />
       </div>
-        
+
     </div>
   )
 }

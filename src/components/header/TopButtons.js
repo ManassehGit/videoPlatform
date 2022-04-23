@@ -11,7 +11,8 @@ const TopButtons = ({button1, button2, color}) => {
 
   
     const logout = async (e) => {
-      await signOut(auth);
+      const result = await signOut(auth);
+      console.log(result);
       setTimeout(() => {
         navigate(linkTo('Index'))
       }, 5000)

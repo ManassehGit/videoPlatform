@@ -32,7 +32,7 @@ const VideoBox = () => {
         <div className='rec2 order-4 order-md-3'>
               <h4 className='desc'>Video Description</h4>
               <div className='paragraph'>
-               <LoremIpsum p={2} />
+               <LoremIpsum p={1} />
               </div>
         </div>
         <div className='but order-2 order-md-4'>

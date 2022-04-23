@@ -128,7 +128,7 @@ return (
 	</div>
 	<div className="mb-3">
 		<label for="desc" className="form-label">Description</label>
-		<input type="text" onChange={handleDetails} className="form-control" id="desc" />
+    	<textarea class="form-control" id="desc" rows="3" onChange={handleDetails}></textarea>
 	</div>
 	
 	<button type="submit" onClick={handleSubmit} className="btn btn-outline-dark btn-lg">Upload</button>

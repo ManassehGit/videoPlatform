@@ -1,16 +1,16 @@
 export const linkTo = (name = 'index') => {
     switch(name){
       case 'Upload Video':
-        return `/upload`;
+        return '/upload';
       case 'Log In':
-        return `/login`;
+        return '/login';
       case 'Sign Up':
         return '/signup';
     case 'View Gallery':
-        return '/gallery'
+        return '/gallery';
     case 'Index':
-        return '/';
+        return '/index';
       default:
-        return '/'
+        return '/';
     }
   }
