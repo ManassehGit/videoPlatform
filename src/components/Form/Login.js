@@ -47,6 +47,7 @@ function Form() {
 
 	}
 
+
 	
 
 // States for registration
@@ -134,6 +135,9 @@ return (
   <div className="mb-3">
     <label htmlFor="inputPassword" className="form-label">Password</label>
     <input type="password" className="form-control" id="inputPassword" onChange={handlePassword}/>
+  </div>
+  <div className="mb-3 d-flex justify-content-center">
+  	Forgotten your password? <Link style={{color:"#f7941d", marginLeft: "5px"}} to="/resetPassword"> Reset Password</Link>
   </div>
   <div className="mb-3">
   	Not having an account? <Link style={{color:"#f7941d"}} to="/signup">Sign Up</Link>

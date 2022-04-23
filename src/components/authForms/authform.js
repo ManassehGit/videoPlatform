@@ -4,8 +4,9 @@ import Login from '../Form/Login';
 import Signup from '../Form/Signin';
 import Upload from '../Form/upload';
 import Footer from '../footer/footer';
+import ResetPassword from '../ResetPassword/ResetPassword';
 
-const AuthForm = ({loginState, signupState, uploadState}) => {
+const AuthForm = ({loginState, signupState, uploadState, resetPassword}) => {
     
   return (
     <div>
@@ -13,6 +14,7 @@ const AuthForm = ({loginState, signupState, uploadState}) => {
         {loginState && <Login />}
         {signupState && <Signup />}
         {uploadState && <Upload />}
+        {resetPassword && <ResetPassword />}
         <Footer />        
     </div>
   )

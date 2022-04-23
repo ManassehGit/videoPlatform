@@ -25,6 +25,7 @@ root.render(
       <Route path="/upload" element={<AuthForm uploadState={true}/>} />
       <Route path=":videoId" element={<VideoPage />} />
       <Route path="/gallery" element={<Gallery />} />
+      <Route path="/resetPassword" element={<AuthForm resetPassword={true}/>} />
     
 
     </Routes>
