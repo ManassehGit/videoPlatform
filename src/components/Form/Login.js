@@ -129,12 +129,12 @@ return (
 			<form>
   <div className="mb-3">
     <label htmlFor="inputEmail" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="inputEmail" onChange={handleEmail} aria-describedby="emailHelp" />
+    <input type="email" className="form-control" id="inputEmail" onChange={handleEmail} aria-describedby="emailHelp" autoComplete="on" />
     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div className="mb-3">
     <label htmlFor="inputPassword" className="form-label">Password</label>
-    <input type="password" className="form-control" id="inputPassword" onChange={handlePassword}/>
+    <input type="password" className="form-control" id="inputPassword" onChange={handlePassword} autoComplete="on"/>
   </div>
   <div className="mb-3 d-flex justify-content-center">
   	Forgotten your password? <Link style={{color:"#f7941d", marginLeft: "5px"}} to="/resetPassword"> Reset Password</Link>
