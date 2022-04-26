@@ -80,6 +80,7 @@ const handleSubmit = async (e) => {
 
 	  const { fileName, filePath } = res.data;
 	  setUploadedFile({fileName, filePath});
+	  console.log(uploadedFile);
 	  setFilenom(fileName);
 	//   console.log(uploadedFile);
 	// console.log("The res data -----======", res.data);
