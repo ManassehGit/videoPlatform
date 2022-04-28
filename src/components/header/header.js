@@ -11,7 +11,7 @@ const Header = ({button1,button2, user, loggedIn}) => {
         <img src='VideoPlatform.png' alt='Video Platform Logo' />
       </Link>
       <div className="showName">
-        {loggedIn && <p>Welcome {user.email.split("@")[0]}</p>}
+        {loggedIn ? <p>Welcome {user.email.split("@")[0]}</p> : ""}
       <TopButtons 
         button1={button1}
         button2={button2}

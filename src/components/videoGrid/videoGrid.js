@@ -31,7 +31,7 @@ const VideoGrid = () => {
             "data": "Click Here",
             "size": 36,
             "style": "bold",
-            "name": "text1",
+            "name": "text2",
             "hOffset": 250,
             "vOffset": 100,
             "alignment": "center",
@@ -41,7 +41,7 @@ const VideoGrid = () => {
             "data": "Click Here",
             "size": 36,
             "style": "bold",
-            "name": "text1",
+            "name": "text3",
             "hOffset": 250,
             "vOffset": 100,
             "alignment": "center",
@@ -51,7 +51,7 @@ const VideoGrid = () => {
             "data": "Click Here",
             "size": 36,
             "style": "bold",
-            "name": "text1",
+            "name": "text4",
             "hOffset": 250,
             "vOffset": 100,
             "alignment": "center",
@@ -60,7 +60,7 @@ const VideoGrid = () => {
     }); 
 
     // setColumnStyle({gridTemplateColumns: `repeat(${gridChoice}, 1fr)`});
-    setGridElements(Object.keys(videos).map((item, index) => <VideoCard key={index} title={videos[item].name} description={videos[item].data} />));
+    setGridElements(Object.keys(videos).map((item, index) => <VideoCard key={index} id={videos[item].name} title={videos[item].name} description={videos[item].data} />));
         
     }, [ videos])
 

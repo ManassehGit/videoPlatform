@@ -2,6 +2,7 @@ import './videoBox.css'
 import { LoremIpsum } from 'react-lorem-ipsum';
 // import Button from '../header/TopButtons';
 import Button2 from '../Buttons/Button_circular';
+import {RWebShare} from 'react-web-share';
 
 const VideoBox = () => {
   const url = "sample.mp4";
@@ -23,7 +24,16 @@ const VideoBox = () => {
               </div>
               <div className='rec1_down'>
                 <h4 style={{marginLeft:"10px"}}>
-                <button type="button" class="btn btn-outline-dark">Share Video</button>        
+                <RWebShare
+                  data={{
+                    text: "Like humans, flamingos make friends for life",
+                    url: "https://on.natgeo.com/2zHaNup",
+                    title: "Flamingos",
+                  }}
+                  onClick={() => console.log("shared successfully!")}
+                >
+                  <button className="btn btn-outline-dark">Share 🔗</button>
+                </RWebShare>
                 </h4>
                 
               </div>

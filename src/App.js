@@ -13,11 +13,16 @@ import Body from './components/body/body';
 
 
 function App() {
+  const loggedIn = true;
+  const button1 = "Log In";
+  console.log("logged", loggedIn);
+  const button2 = loggedIn ? "Sign Out": "Sign Up";
+  console.log("button", button2)
 
   return (
       
       <div className='App'>  
-        <Header button1="Log In" button2="Sign Up" />
+        <Header button1={button1} button2={button2} loggedIn={true} user={{email: "Kojo@gmail.com"}}/>
         <Body />
         <Footer />
       </div>
