@@ -26,9 +26,9 @@ const VideoBox = () => {
                 <h4 style={{marginLeft:"10px"}}>
                 <RWebShare
                   data={{
-                    text: "Like humans, flamingos make friends for life",
-                    url: "https://on.natgeo.com/2zHaNup",
-                    title: "Flamingos",
+                    text: "Share cool videos from the Video Platform",
+                    url: ``,
+                    title: "Video Platform",
                   }}
                   onClick={() => console.log("shared successfully!")}
                 >

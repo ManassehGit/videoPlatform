@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import {signOut, onAuthStateChanged} from 'firebase/auth'
 import { auth } from '../../firebase-config'
-import { linkTo } from '../LinkTo/linkTo'
-import { useNavigate } from 'react-router-dom'
+// import { linkTo } from '../LinkTo/linkTo'
+// import { useNavigate } from 'react-router-dom'
 
 const SignOutButton = ({color, size}) => {
 
@@ -12,16 +12,16 @@ const SignOutButton = ({color, size}) => {
 		})
 	}, []);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleClick = async () => {
         
           const result = await signOut(auth);
           console.log(result);
           
-          setTimeout(() => {
-            navigate(linkTo('Index'));
-            }, 10000)
+          // setTimeout(() => {
+          //   navigate(linkTo('Index'));
+          //   }, 10000)
           
       }
   return (
