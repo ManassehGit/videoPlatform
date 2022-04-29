@@ -11,10 +11,17 @@ import AuthForm from './components/authForms/authform';
 
 import VideoPage from './components/videoPage/videoPage';
 import Gallery from './components/gallery/gallery';
+import {ReactReduxFirebaseProvider} from 'react-redux-firebase';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import { rrfProps } from './store/store';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store}>
+    <ReactReduxFirebaseProvider {...rrfProps}>
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
@@ -29,6 +36,9 @@ root.render(
       
     </Routes>
   </Router>
+  </ReactReduxFirebaseProvider>
+  </Provider>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
