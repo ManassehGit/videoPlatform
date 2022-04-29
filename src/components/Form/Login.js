@@ -37,7 +37,7 @@ function Form() {
 
 		setTimeout(() => {
 			navigate(linkTo('View Gallery'));
-		}, 5000)
+		}, 3000)
 
 		}catch(e){
 		setError(true);

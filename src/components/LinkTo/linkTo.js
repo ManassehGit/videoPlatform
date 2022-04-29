@@ -9,7 +9,7 @@ export const linkTo = (name = 'index') => {
     case 'View Gallery':
         return '/gallery';
     case 'Index':
-        return '/index';
+        return '/';
       default:
         return '/';
     }
