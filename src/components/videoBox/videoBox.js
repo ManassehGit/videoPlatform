@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import './videoBox.css'
 import { LoremIpsum } from 'react-lorem-ipsum';
 // import Button from '../header/TopButtons';
@@ -5,20 +6,35 @@ import Button2 from '../Buttons/Button_circular';
 import {RWebShare} from 'react-web-share';
 
 const VideoBox = () => {
-  const url = "sample.mp4";
+  const [url, setUrl] = useState("Vids/Sample3.mp4");
+
+  useEffect(()=>{
+    document.getElementById("vid").src=url;
+  });
+
   return (
     <div className='rectangle d-flex'>
       <div className='but order-1 order-sm-1'>
-      <Button2
+      <div  onClick={()=>{
+        if(url !== "Vids/Sample1.mp4"){
+          if(url === "Vids/Sample2.mp4"){
+            setUrl("Vids/Sample1.mp4")
+          }else{
+            setUrl("Vids/Sample2.mp4")
+          }
+        }
+      }}> 
+        <Button2 
         name = "Prev"
         /> 
+        </div>
       </div>
 
         <div className='rec1 order-3 order-md-2'>
               <h2 className='title'>The Video Title</h2>
               <div className=''>
               <video controls width="100%">
-              <source src={url} type="video/mp4" />
+              <source id="vid" src={url} type="video/mp4" />
               Sorry, your browser doesn't support embedded videos.
               </video>
               </div>
@@ -46,9 +62,19 @@ const VideoBox = () => {
               </div>
         </div>
         <div className='but order-2 order-md-4'>
+        <div  onClick={()=>{
+        if(url !== "Vids/Sample3.mp4"){
+          if(url === "Vids/Sample2.mp4"){
+            setUrl("Vids/Sample3.mp4")
+          }else{
+            setUrl("Vids/Sample2.mp4")
+          }
+        }
+      }}> 
         <Button2
         name = "Next"
         />
+        </div>
         </div>
     </div>
     
