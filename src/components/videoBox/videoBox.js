@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import './videoBox.css'
 import { LoremIpsum } from 'react-lorem-ipsum';
 // import Button from '../header/TopButtons';
@@ -6,11 +6,8 @@ import Button2 from '../Buttons/Button_circular';
 import {RWebShare} from 'react-web-share';
 
 const VideoBox = () => {
+  
   const [url, setUrl] = useState("Vids/Sample3.mp4");
-
-  useEffect(()=>{
-    document.getElementById("vid").src=url;
-  });
 
   return (
     <div className='rectangle d-flex'>
@@ -33,8 +30,8 @@ const VideoBox = () => {
         <div className='rec1 order-3 order-md-2'>
               <h2 className='title'>The Video Title</h2>
               <div className=''>
-              <video controls width="100%">
-              <source id="vid" src={url} type="video/mp4" />
+              <video controls width="100%" key={url}>
+              <source src={url} type="video/mp4" />
               Sorry, your browser doesn't support embedded videos.
               </video>
               </div>
