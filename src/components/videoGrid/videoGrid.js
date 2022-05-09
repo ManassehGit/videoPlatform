@@ -11,47 +11,29 @@ const VideoGrid = () => {
         // setGridChoice(3);
         setVideos({
         "image": { 
-            "src": "Images/Sun.png",
-            "name": "sun1",
+            "img": "Thumbs/Sample1.png",
+            "name": "Brain Tumor Detection",
             "hOffset": 250,
             "vOffset": 250,
-            "data": "center"
+            "data": "Exploring the use of technology in modern day medicine"
         },
         "text": {
-            "data": "Click Here",
+            "img": "Thumbs/Sample2.png",
+            "data": "Fundamentals of Git & Github. Get to know the basics",
             "size": 36,
             "style": "bold",
-            "name": "text1",
+            "name": "Git & GitHub",
             "hOffset": 250,
             "vOffset": 100,
             "alignment": "center",
             "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
         },
         "test": {
-            "data": "Click Here",
+            "img": "Thumbs/Sample3.png",
+            "data": "Recursion made easy. A lesson on data structures and algorithms.",
             "size": 36,
             "style": "bold",
-            "name": "text2",
-            "hOffset": 250,
-            "vOffset": 100,
-            "alignment": "center",
-            "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
-        },
-        "pen": {
-            "data": "Click Here",
-            "size": 36,
-            "style": "bold",
-            "name": "text3",
-            "hOffset": 250,
-            "vOffset": 100,
-            "alignment": "center",
-            "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
-        },
-        "net": {
-            "data": "Click Here",
-            "size": 36,
-            "style": "bold",
-            "name": "text4",
+            "name": "Recursion",
             "hOffset": 250,
             "vOffset": 100,
             "alignment": "center",
@@ -60,7 +42,7 @@ const VideoGrid = () => {
     }); 
 
     // setColumnStyle({gridTemplateColumns: `repeat(${gridChoice}, 1fr)`});
-    setGridElements(Object.keys(videos).map((item, index) => <VideoCard key={index} id={videos[item].name} title={videos[item].name} description={videos[item].data} />));
+    setGridElements(Object.keys(videos).map((item, index) => <VideoCard key={index} id={videos[item].name} title={videos[item].name} description={videos[item].data} source={videos[item].img} />));
         
     }, [ videos])
 

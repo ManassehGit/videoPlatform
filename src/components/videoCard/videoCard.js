@@ -2,7 +2,7 @@ import './videoCard.css'
 import {Link} from 'react-router-dom'
 import { linkTo } from '../LinkTo/linkTo'
 
-const VideoCard = ({id, title ,description}) => {
+const VideoCard = ({id, title ,description,source}) => {
   return (
     <Link to={`${linkTo("View Gallery")}/${id}`}>
     <div className="container">
@@ -14,6 +14,7 @@ const VideoCard = ({id, title ,description}) => {
             <p className="description">
                 {description}
             </p>
+            <img className='thumb' src={source}></img>
       </div>
       </Link>
   

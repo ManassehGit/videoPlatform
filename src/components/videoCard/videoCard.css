@@ -56,3 +56,11 @@
 .description{
     text-align: center;
 }
+
+.thumb{
+position: relative;
+width: 300px;
+height: 150px;
+border-radius: 10px;
+margin: auto;
+}
