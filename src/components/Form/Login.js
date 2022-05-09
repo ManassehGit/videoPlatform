@@ -4,11 +4,14 @@ import {Link, useNavigate} from 'react-router-dom';
 import {auth} from '../../firebase-config';
 import {onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
 import { linkTo } from '../LinkTo/linkTo';
+import {useSelector, useDispatch} from 'react-redux';
+import {toggleLoginStatus, setCurrentUserEmail} from '../../store/userSlice';
 
 
 
 function Form() {
 
+	const dispatch = useDispatch();
 	const [loginEmail, setLoginEmail] = useState();
 	const [loginPassword, setLoginPassword] = useState();	
 	const [user, setUser] = useState();
@@ -18,12 +21,15 @@ function Form() {
 
 	useEffect(() => {
 		onAuthStateChanged(auth, (currentUser) => {
-			setUser(currentUser.email);
+			
 		})
 	}, []);
 
+	let loginStatus = useSelector((state) => state.user.isLoggedIn);
+	console.log("testing login",loginStatus);
+
 	const login = async (e) => {
-		
+
 		e.preventDefault();
 		try {
 		setSubmitted(true);
@@ -33,11 +39,15 @@ function Form() {
 			loginEmail,
 			loginPassword
 		);
-		console.log(user);
+		console.log(user.email)
+		dispatch(toggleLoginStatus());
+		dispatch(setCurrentUserEmail(user.email))
+		setUser(loginEmail);
+				
 
 		setTimeout(() => {
 			navigate(linkTo('View Gallery'));
-		}, 3000)
+		}, 2000)
 
 		}catch(e){
 		setError(true);

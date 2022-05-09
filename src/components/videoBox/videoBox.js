@@ -4,7 +4,7 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 import Button2 from '../Buttons/Button_circular';
 import {RWebShare} from 'react-web-share';
 
-const VideoBox = () => {
+const VideoBox = ({detail}) => {
   const url = "sample.mp4";
   return (
     <div className='rectangle d-flex'>
@@ -26,9 +26,9 @@ const VideoBox = () => {
                 <h4 style={{marginLeft:"10px"}}>
                 <RWebShare
                   data={{
-                    text: "Like humans, flamingos make friends for life",
-                    url: "https://on.natgeo.com/2zHaNup",
-                    title: "Flamingos",
+                    text: "Share cool videos from the Video Platform",
+                    url: ``,
+                    title: "Video Platform",
                   }}
                   onClick={() => console.log("shared successfully!")}
                 >
@@ -43,6 +43,7 @@ const VideoBox = () => {
               <h4 className='desc'>Video Description</h4>
               <div className='paragraph'>
                <LoremIpsum p={1} />
+               {detail}
               </div>
         </div>
         <div className='but order-2 order-md-4'>
