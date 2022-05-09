@@ -30,7 +30,7 @@ const SignOutButton = ({color, size}) => {
     className='button' 
     style={{backgroundColor:color}}
     >
-      <p className='para' style={{fontSize:size}} onClick={handleClick}>Signet Out</p>
+      <p className='para' style={{fontSize:size}} onClick={handleClick}>Sign Out</p>
     </button>
     </React.StrictMode>
   )
