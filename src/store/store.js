@@ -7,6 +7,8 @@ import 'firebase/compat/firestore' // <- needed if using firestore
 import {configureStore} from '@reduxjs/toolkit';
 import { createFirestoreInstance, firestoreReducer } from 'redux-firestore' // <- needed if using firestore
 import videos from './videosSlice'
+import user from './userSlice'
+
 
 const fbConfig = {
     apiKey: "AIzaSyDUW0xdf-p8xrmPp9Y1JH4fiG-83QAtUjk",
@@ -35,7 +37,8 @@ firebase.firestore() // <- needed if using firestore
 // Add firebase to reducers
 const rootReducer = {
   firestore: firestoreReducer, // <- needed if using firestore
-  videos: videos.reducer
+  videos: videos.reducer,
+  user: user.reducer
 }
 
 // Create store with reducers and initial state
@@ -50,3 +53,4 @@ export const rrfProps = {
   dispatch: store.dispatch,
   createFirestoreInstance // <- needed if using firestore
 }
+

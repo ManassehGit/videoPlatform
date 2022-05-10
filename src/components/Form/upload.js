@@ -153,9 +153,9 @@ return (
 		<div className="">
 			<div className="container col-md-6 justify-content-center p-5">
 			<form>
-			<div class="mb-3">
-			<label for="formFile" class="form-label">Select Video File</label>
-			<input class="form-control" type="file" id="formFile" onChange={handleOption} autoComplete="on"/>
+			<div className="mb-3">
+			<label for="formFile" className="form-label">Select Video File</label>
+			<input className="form-control" type="file" id="formFile" onChange={handleOption} autoComplete="on"/>
 			</div>
 	<div className="mb-3">
 		<label for="title" className="form-label">Video Title</label>
@@ -163,7 +163,7 @@ return (
 	</div>
 	<div className="mb-3">
 		<label for="desc" className="form-label">Description</label>
-    	<textarea class="form-control" id="desc" rows="3" onChange={handleDetails} autoComplete="on"></textarea>
+    	<textarea className="form-control" id="desc" rows="3" onChange={handleDetails} autoComplete="on"></textarea>
 	</div>
 	
 	<button type="submit" onClick={handleSubmit} className="btn btn-outline-dark btn-lg">Upload</button>

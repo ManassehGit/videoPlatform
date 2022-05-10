@@ -2,7 +2,10 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const videos = createSlice({
     name: "videos",
-    initialState: {},
+    initialState: {
+            name: "sample.mp4",
+            path: "/uploads"
+    },
     reducers: {
         addVideo  (state, action) {
             const {name, path} = action.payload

@@ -4,7 +4,7 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 import Button2 from '../Buttons/Button_circular';
 import {RWebShare} from 'react-web-share';
 
-const VideoBox = () => {
+const VideoBox = ({detail}) => {
   const url = "sample.mp4";
   return (
     <div className='rectangle d-flex'>
@@ -43,6 +43,7 @@ const VideoBox = () => {
               <h4 className='desc'>Video Description</h4>
               <div className='paragraph'>
                <LoremIpsum p={1} />
+               {detail}
               </div>
         </div>
         <div className='but order-2 order-md-4'>

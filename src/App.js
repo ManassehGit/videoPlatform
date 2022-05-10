@@ -1,31 +1,38 @@
 import './App.css';
 // import { Route, Routes } from 'react-router-dom';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
-import Body from './components/body/body';
-// import Form from './components/Form/form';
-// import Login from './components/Form/Login';
-// import HeaderC from './components/header/headerCentre';
-// import Signin from './components/Form/Signin'
-// import Upload from './components/Form/upload'
-// import Home from './pages/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AuthForm from './components/authForms/authform';
+import VideoPage from './components/videoPage/videoPage';
+import Gallery from './components/gallery/gallery';
+// import { useSelector } from 'react-redux';
+import Home from './components/home/home';
 
+ 
 
 
 function App() {
-  const loggedIn = true;
-  const button1 = "Log In";
-  console.log("logged", loggedIn);
-  const button2 = loggedIn ? "Sign Out": "Sign Up";
-  console.log("button", button2)
+  // let isUserLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  // console.log("Checkiiiiiinnnnnnggggg", isUserLoggedIn);
+    
 
   return (
       
-      <div className='App'>  
-        <Header button1={button1} button2={button2} loggedIn={true} user={{email: "Kojo@gmail.com"}}/>
-        <Body />
-        <Footer />
-      </div>
+      // <div className='App'>  
+    <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="login" element={<AuthForm loginState={true}/>} />
+      <Route path="signup" element={<AuthForm signupState={true}/>} />
+      <Route path="upload" element={<AuthForm uploadState={true}/>} />
+      
+      <Route exact path="gallery" element={<Gallery/>} >
+        <Route path=":videoId" element={<VideoPage />} />
+      </Route>
+      <Route path="resetPassword" element={<AuthForm resetPassword={true}/>} />
+      
+    </Routes>
+  </Router>
+      // </div>
 
   );
 }
