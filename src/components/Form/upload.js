@@ -154,15 +154,15 @@ return (
 			<div className="container col-md-6 justify-content-center p-5">
 			<form>
 			<div className="mb-3">
-			<label for="formFile" className="form-label">Select Video File</label>
+			<label htmlFor="formFile" className="form-label">Select Video File</label>
 			<input className="form-control" type="file" id="formFile" onChange={handleOption} autoComplete="on"/>
 			</div>
 	<div className="mb-3">
-		<label for="title" className="form-label">Video Title</label>
+		<label htmlFor="title" className="form-label">Video Title</label>
 		<input type="password" onChange={handleTitle} className="form-control" id="title" autoComplete="on" />
 	</div>
 	<div className="mb-3">
-		<label for="desc" className="form-label">Description</label>
+		<label htmlFor="desc" className="form-label">Description</label>
     	<textarea className="form-control" id="desc" rows="3" onChange={handleDetails} autoComplete="on"></textarea>
 	</div>
 	
